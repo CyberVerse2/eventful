@@ -1,33 +1,42 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from 'resend';
 
-export async function POST(request: NextRequest) {
-  const requestData = await request.json();
+export async function POST(req: NextRequest) {
   try {
-    const email = requestData.requestedInfo?.email;
-    const physicalAddress = requestData.requestedInfo?.physicalAddress;
-    const errors: any = {};
-    if (email && email.endsWith('@example.com')) {
-      errors.email = 'Example.com emails are not allowed';
-    }
-    if (physicalAddress) {
-      if (physicalAddress.postalCode && physicalAddress.postalCode.length < 5) {
-        if (!errors.physicalAddress) errors.physicalAddress = {};
-        errors.physicalAddress.postalCode = 'Invalid postal code';
+    const body = await req.json();
+    console.log('Received callback:', body);
+
+    // Try to send email if present
+    const email = body.requestedInfo?.email || body.email;
+    const phoneNumber = body.requestedInfo?.phoneNumber || body.phoneNumber;
+    if (email) {
+      const apiKey = process.env.RESEND_API_KEY;
+      if (apiKey) {
+        const resend = new Resend(apiKey);
+        await resend.emails.send({
+          from: 'Eventful <no-reply@jbottoms.com>',
+          to: [email],
+          subject: 'Your Eventful Ticket Details',
+          html: `<h2>Thank you for your purchase!</h2><p>Your phone number: ${phoneNumber || 'N/A'}</p>`
+        });
       }
-      if (physicalAddress.countryCode === 'XY') {
-        if (!errors.physicalAddress) errors.physicalAddress = {};
-        errors.physicalAddress.countryCode = "We don't ship to this country";
-      }
     }
-    if (Object.keys(errors).length > 0) {
-      return NextResponse.json({ errors });
-    }
-    return NextResponse.json({
-      calls: requestData.calls,
-      chainId: requestData.chainId,
-      capabilities: requestData.capabilities
-    });
-  } catch (error) {
-    return NextResponse.json({ errors: { server: 'Server error validating data' } });
+
+    // Always return the required fields for the wallet
+    return NextResponse.json(
+      {
+        calls: body.calls,
+        chainId: body.chainId,
+        version: body.version,
+        capabilities: body.capabilities
+      },
+      { status: 200 }
+    );
+  } catch (error: any) {
+    console.error('Error processing data:', error);
+    return NextResponse.json(
+      { errors: { server: 'Server error validating data' } },
+      { status: 500 }
+    );
   }
 }

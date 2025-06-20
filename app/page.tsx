@@ -536,7 +536,8 @@ export default function TicketingPage() {
                                     capabilities: {
                                       dataCallback: {
                                         requests,
-                                        callbackURL: `${window.location.origin}/api/data-validation`
+                                        callbackURL:
+                                          'https://eventful-xi.vercel.app/api/data-validation'
                                       }
                                     }
                                   }
