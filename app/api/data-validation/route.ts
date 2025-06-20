@@ -78,7 +78,7 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
                   </tr>
                   <tr>
                     <td style="font-size:13px;color:#888;width:120px;">Phone:</td>
-                    <td style="font-size:13px;color:#222;">${phoneNumber || 'N/A'}</td>
+                    <td style="font-size:13px;color:#222;">${phoneNumber.number || 'N/A'}</td>
                   </tr>
                 </table>
                 <h3 style="font-size:16px;font-weight:bold;margin-bottom:8px;color:#222;">Event Details</h3>
