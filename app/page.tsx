@@ -12,6 +12,7 @@ import { useConnect, useAccount, useDisconnect } from 'wagmi';
 import { coinbaseWallet } from 'wagmi/connectors';
 import ConnectWalletButton from '@/components/ConnectWalletButton';
 import React from 'react';
+import { encodeFunctionData, erc20Abi, parseUnits } from 'viem';
 
 // Type definitions
 interface Ticket {
@@ -522,6 +523,9 @@ export default function TicketingPage() {
                                 return;
                               }
                               try {
+                                const usdcAddress = '0x036CbD53842c5426634e7929541eC2318f3dCF7e'; // USDC on Base Sepolia
+                                const recipient = '0xd8da6bf26964af9d7eed9e03e53415d37aa96045'; // Example recipient
+                                const amount = parseUnits('0.01', 6); // 0.01 USDC (6 decimals)
                                 const requests = [
                                   { type: 'email', optional: false },
                                   { type: 'phoneNumber', optional: false }
@@ -531,7 +535,14 @@ export default function TicketingPage() {
                                     version: '1.0',
                                     chainId: '0x14A34', // baseSepolia in hex (84532)
                                     calls: [
-                                      // TODO: Add your transaction call(s) here
+                                      {
+                                        to: usdcAddress,
+                                        data: encodeFunctionData({
+                                          abi: erc20Abi,
+                                          functionName: 'transfer',
+                                          args: [recipient, amount]
+                                        })
+                                      }
                                     ],
                                     capabilities: {
                                       dataCallback: {
