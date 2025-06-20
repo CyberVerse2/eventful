@@ -28,7 +28,7 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
               <!-- Event Image Header -->
               <div style="position:relative;height:192px;overflow:hidden;background:#222;">
                 <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Crypto Summit 2024" style="width:100%;height:192px;object-fit:cover;display:block;" />
-                <div style="position:absolute;top:16px;right:16px;background:#FFD600;color:#000;padding:6px 16px;border-radius:999px;border:2px solid #000;font-weight:bold;font-size:16px;">$399</div>
+                <div style="position:absolute;top:16px;right:16px;background:#FFD600;color:#000;padding:6px 16px;border-radius:999px;border:2px solid #000;font-weight:bold;font-size:16px;">$199</div>
                 <div style="position:absolute;bottom:16px;left:16px;right:16px;color:#fff;">
                   <div style="font-size:12px;letter-spacing:1px;opacity:0.9;margin-bottom:4px;">Conference • VIP</div>
                   <div style="font-size:20px;font-weight:bold;">Crypto Summit 2024</div>
