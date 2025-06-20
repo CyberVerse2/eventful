@@ -496,6 +496,12 @@ export default function TicketingPage() {
                                   { type: 'email', optional: false },
                                   { type: 'phoneNumber', optional: false }
                                 ];
+                                // Get selected ticket type (default to 'VIP')
+                                const selectedType =
+                                  Object.keys(selectedTickets).find(
+                                    (type) => selectedTickets[type] > 0
+                                  ) || 'VIP';
+                                const callbackURL = `https://ef3b-2a09-bac5-4dd4-6d2-00-ae-17.ngrok-free.app/api/data-validation?eventId=1&type=${encodeURIComponent(selectedType)}`;
                                 const params = [
                                   {
                                     version: '1.0',
@@ -513,8 +519,7 @@ export default function TicketingPage() {
                                     capabilities: {
                                       dataCallback: {
                                         requests,
-                                        callbackURL:
-                                          'https://ef3b-2a09-bac5-4dd4-6d2-00-ae-17.ngrok-free.app/api/data-validation'
+                                        callbackURL
                                       }
                                     }
                                   }
