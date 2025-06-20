@@ -39,21 +39,21 @@ interface Event {
 const events = [
   {
     id: 1,
-    title: 'Summer Music Festival 2024',
-    date: 'July 15, 2024',
-    time: '6:00 PM',
-    location: 'Central Park, New York',
+    title: 'Crypto Summit 2024',
+    date: 'October 10, 2024',
+    time: '9:00 AM',
+    location: 'Web3 Convention Center, San Francisco',
     image:
-      'https://imgs.search.brave.com/h1Za-S5Wn3c3_Z-1fmj02CSmeeqcpAXiUoiJPdtT2rs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMtZXh0LmJpenph/Ym8uY29tL2Jpenph/Ym9wcm9kL2ltYWdl/L3VwbG9hZC9xX2F1/dG8sZl9hdXRvLGNf/c2NhbGUsY19jcm9w/LGdfY3VzdG9tL3Yx/Njg0OTM3ODM0L2dz/amtjYTE3NmkwOGJ4/cTcyMTky.jpeg',
-    category: 'Music',
-    rating: 4.8,
-    attendees: 2500,
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
+    category: 'Conference',
+    rating: 4.9,
+    attendees: 3200,
     description:
-      'Join us for an unforgettable evening of live music featuring top artists from around the world.',
+      'The premier blockchain and Web3 conference featuring top speakers, hands-on workshops, and networking with industry leaders. Organized by @Web.',
     tickets: [
-      { type: 'General Admission', price: 75, available: 150, color: 'bg-green-500' },
-      { type: 'VIP', price: 150, available: 50, color: 'bg-yellow-500' },
-      { type: 'Premium', price: 250, available: 25, color: 'bg-purple-500' }
+      { type: 'Standard', price: 199, available: 200, color: 'bg-green-500' },
+      { type: 'VIP', price: 399, available: 50, color: 'bg-yellow-500' },
+      { type: 'Executive', price: 799, available: 10, color: 'bg-purple-500' }
     ]
   }
 ];

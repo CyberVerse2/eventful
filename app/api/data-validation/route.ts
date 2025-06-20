@@ -22,17 +22,17 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
         await resend.emails.send({
           from: 'Eventful <no-reply@thecyberverse.xyz>',
           to: [email],
-          subject: 'Your Eventful Ticket Details',
+          subject: 'Your Crypto Summit 2024 Ticket',
           html: `
             <div style="max-width:480px;margin:0 auto;background:#fff;border:4px solid #000;border-radius:16px;overflow:hidden;font-family:Arial,sans-serif;">
               <!-- Event Image Header -->
               <div style="position:relative;height:192px;overflow:hidden;background:#222;">
-                <img src="https://imgs.search.brave.com/h1Za-S5Wn3c3_Z-1fmj02CSmeeqcpAXiUoiJPdtT2rs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMtZXh0LmJpenph/Ym8uY29tL2Jpenph/Ym9wcm9kL2ltYWdl/L3VwbG9hZC9xX2F1/dG8sZl9hdXRvLGNf/c2NhbGUsY19jcm9w/LGdfY3VzdG9tL3Yx/Njg0OTM3ODM0L2dz/amtjYTE3NmkwOGJ4/cTcyMTky.jpeg" alt="Event" style="width:100%;height:192px;object-fit:cover;display:block;" />
-                <div style="position:absolute;top:16px;right:16px;background:#FFD600;color:#000;padding:6px 16px;border-radius:999px;border:2px solid #000;font-weight:bold;font-size:16px;">$99</div>
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Crypto Summit 2024" style="width:100%;height:192px;object-fit:cover;display:block;" />
+                <div style="position:absolute;top:16px;right:16px;background:#FFD600;color:#000;padding:6px 16px;border-radius:999px;border:2px solid #000;font-weight:bold;font-size:16px;">$399</div>
                 <div style="position:absolute;bottom:16px;left:16px;right:16px;color:#fff;">
-                  <div style="font-size:12px;letter-spacing:1px;opacity:0.9;margin-bottom:4px;">Pop • VIP</div>
-                  <div style="font-size:20px;font-weight:bold;">Sample Artist</div>
-                  <div style="font-size:14px;opacity:0.9;">Sample Event</div>
+                  <div style="font-size:12px;letter-spacing:1px;opacity:0.9;margin-bottom:4px;">Conference • VIP</div>
+                  <div style="font-size:20px;font-weight:bold;">Crypto Summit 2024</div>
+                  <div style="font-size:14px;opacity:0.9;">Web3 Convention Center, San Francisco</div>
                 </div>
               </div>
               <!-- Event Details -->
@@ -40,11 +40,11 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
                 <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
                   <tr>
                     <td style="font-size:12px;color:#888;text-transform:uppercase;">Date</td>
-                    <td style="font-size:12px;color:#888;text-transform:uppercase;">Doors / Show</td>
+                    <td style="font-size:12px;color:#888;text-transform:uppercase;">Start Time</td>
                   </tr>
                   <tr>
-                    <td style="font-size:15px;font-weight:500;color:#222;">2024-07-15</td>
-                    <td style="font-size:15px;font-weight:500;color:#222;">6:00 PM / 7:00 PM</td>
+                    <td style="font-size:15px;font-weight:500;color:#222;">October 10, 2024</td>
+                    <td style="font-size:15px;font-weight:500;color:#222;">9:00 AM</td>
                   </tr>
                   <tr><td colspan="2" style="height:8px;"></td></tr>
                   <tr>
@@ -52,17 +52,17 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
                     <td style="font-size:12px;color:#888;text-transform:uppercase;">Holder</td>
                   </tr>
                   <tr>
-                    <td style="font-size:15px;font-weight:500;color:#222;">Sample Venue</td>
-                    <td style="font-size:15px;font-weight:500;color:#222;">John Doe</td>
+                    <td style="font-size:15px;font-weight:500;color:#222;">Web3 Convention Center, San Francisco</td>
+                    <td style="font-size:15px;font-weight:500;color:#222;">${email || 'N/A'}</td>
                   </tr>
                 </table>
                 <!-- Barcode Section -->
                 <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #eee;padding-top:16px;">
                   <div style="flex:1;">
                     <div style="font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">Ticket ID</div>
-                    <div style="font-family:monospace;font-size:13px;color:#555;">TICKET-001</div>
+                    <div style="font-family:monospace;font-size:13px;color:#555;">CS2024-VIP-001</div>
                   </div>
-                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=TICKET-001" alt="Barcode" style="margin-left:16px;width:80px;height:80px;background:#fff;border:1px solid #eee;border-radius:8px;" />
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=CS2024-VIP-001" alt="Barcode" style="margin-left:16px;width:80px;height:80px;background:#fff;border:1px solid #eee;border-radius:8px;" />
                 </div>
               </div>
               <div style="background:#fafafa;padding:16px 24px;border-top:1px solid #eee;font-size:12px;color:#888;text-align:center;">
@@ -85,23 +85,23 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
                 <table width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td style="font-size:13px;color:#888;width:120px;">Event:</td>
-                    <td style="font-size:13px;color:#222;">Sample Event</td>
+                    <td style="font-size:13px;color:#222;">Crypto Summit 2024</td>
                   </tr>
                   <tr>
-                    <td style="font-size:13px;color:#888;width:120px;">Artist:</td>
-                    <td style="font-size:13px;color:#222;">Sample Artist</td>
+                    <td style="font-size:13px;color:#888;width:120px;">Category:</td>
+                    <td style="font-size:13px;color:#222;">Conference</td>
                   </tr>
                   <tr>
                     <td style="font-size:13px;color:#888;width:120px;">Date:</td>
-                    <td style="font-size:13px;color:#222;">2024-07-15</td>
+                    <td style="font-size:13px;color:#222;">October 10, 2024</td>
                   </tr>
                   <tr>
                     <td style="font-size:13px;color:#888;width:120px;">Time:</td>
-                    <td style="font-size:13px;color:#222;">7:00 PM</td>
+                    <td style="font-size:13px;color:#222;">9:00 AM</td>
                   </tr>
                   <tr>
                     <td style="font-size:13px;color:#888;width:120px;">Venue:</td>
-                    <td style="font-size:13px;color:#222;">Sample Venue</td>
+                    <td style="font-size:13px;color:#222;">Web3 Convention Center, San Francisco</td>
                   </tr>
                   <tr>
                     <td style="font-size:13px;color:#888;width:120px;">Ticket Type:</td>
@@ -109,11 +109,11 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
                   </tr>
                   <tr>
                     <td style="font-size:13px;color:#888;width:120px;">Ticket ID:</td>
-                    <td style="font-size:13px;color:#222;">TICKET-001</td>
+                    <td style="font-size:13px;color:#222;">CS2024-VIP-001</td>
                   </tr>
                   <tr>
-                    <td style="font-size:13px;color:#888;width:120px;">Holder:</td>
-                    <td style="font-size:13px;color:#222;">John Doe</td>
+                    <td style="font-size:13px;color:#888;width:120px;">Description:</td>
+                    <td style="font-size:13px;color:#222;">The premier blockchain and Web3 conference featuring top speakers, hands-on workshops, and networking with industry leaders. Organized by @Web.</td>
                   </tr>
                 </table>
               </div>
