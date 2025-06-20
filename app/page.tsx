@@ -43,7 +43,8 @@ const events = [
     date: 'July 15, 2024',
     time: '6:00 PM',
     location: 'Central Park, New York',
-    image: '/placeholder.svg?height=200&width=300',
+    image:
+      'https://imgs.search.brave.com/h1Za-S5Wn3c3_Z-1fmj02CSmeeqcpAXiUoiJPdtT2rs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMtZXh0LmJpenph/Ym8uY29tL2Jpenph/Ym9wcm9kL2ltYWdl/L3VwbG9hZC9xX2F1/dG8sZl9hdXRvLGNf/c2NhbGUsY19jcm9w/LGdfY3VzdG9tL3Yx/Njg0OTM3ODM0L2dz/amtjYTE3NmkwOGJ4/cTcyMTky.jpeg',
     category: 'Music',
     rating: 4.8,
     attendees: 2500,
@@ -53,41 +54,6 @@ const events = [
       { type: 'General Admission', price: 75, available: 150, color: 'bg-green-500' },
       { type: 'VIP', price: 150, available: 50, color: 'bg-yellow-500' },
       { type: 'Premium', price: 250, available: 25, color: 'bg-purple-500' }
-    ]
-  },
-  {
-    id: 2,
-    title: 'Tech Conference 2024',
-    date: 'August 22, 2024',
-    time: '9:00 AM',
-    location: 'Convention Center, San Francisco',
-    image: '/placeholder.svg?height=200&width=300',
-    category: 'Technology',
-    rating: 4.9,
-    attendees: 1200,
-    description:
-      'Discover the latest innovations in technology with industry leaders and networking opportunities.',
-    tickets: [
-      { type: 'Early Bird', price: 199, available: 100, color: 'bg-green-500' },
-      { type: 'Regular', price: 299, available: 200, color: 'bg-yellow-500' },
-      { type: 'VIP Access', price: 499, available: 30, color: 'bg-purple-500' }
-    ]
-  },
-  {
-    id: 3,
-    title: 'Food & Wine Festival',
-    date: 'September 10, 2024',
-    time: '12:00 PM',
-    location: 'Waterfront Plaza, Miami',
-    image: '/placeholder.svg?height=200&width=300',
-    category: 'Food & Drink',
-    rating: 4.7,
-    attendees: 800,
-    description: 'Savor exquisite cuisine and fine wines from renowned chefs and vintners.',
-    tickets: [
-      { type: 'Tasting Pass', price: 85, available: 200, color: 'bg-green-500' },
-      { type: 'Premium Tasting', price: 165, available: 75, color: 'bg-yellow-500' },
-      { type: "Chef's Table", price: 350, available: 20, color: 'bg-purple-500' }
     ]
   }
 ];
